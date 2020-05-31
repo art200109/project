@@ -1,5 +1,5 @@
 #!/bin/bash
-
+mkdir ./docker_test/
 ssh-keygen -t rsa -C docker -f ./docker_test/docker_key -q -N "" \
 	2>/dev/null <<< y >/dev/null
 
