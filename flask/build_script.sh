@@ -1,7 +1,6 @@
 #!/bin/bash
 mkdir ./docker_test/
-ssh-keygen -t rsa -C docker -f ./docker_test/docker_key -q -N "" \
-	2>/dev/null <<< y >/dev/null
+ssh-keygen -t rsa -C docker -f ./docker_test/docker_key -q -N "" <<< y
 
 cat ./docker_test/docker_key.pub >> /root/.ssh/authorized_keys
 
