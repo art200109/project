@@ -8,7 +8,7 @@ app = Flask(__name__)
 def dockers():
     COMMAND="docker ps --format '{{.Names}} - {{.Image}}'"
 
-    ssh = subprocess.Popen(["ssh", "-o", "StrictHostKeyChecking no", "docker_engine", COMMAND],
+    ssh = subprocess.Popen(["ssh", "-o", "StrictHostKeyChecking no", "flask_user@docker_engine", COMMAND],
                        shell=False,
                        stdout=subprocess.PIPE,
                        stderr=subprocess.PIPE)
