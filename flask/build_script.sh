@@ -1,8 +1,9 @@
 #!/bin/bash
+cd ./flask_user
+
 mkdir ./.ssh/
 ssh-keygen -t rsa -C docker -f ./.ssh/docker_key -q -N "" <<< y
 
-cd ./flask_user
 chmod u+x ./useradd.sh
 ./useradd.sh
 
