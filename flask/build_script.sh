@@ -2,7 +2,8 @@
 mkdir ./.ssh/
 ssh-keygen -t rsa -C docker -f ./.ssh/docker_key -q -N "" <<< y
 
-cat ./.ssh/docker_key.pub >> /root/.ssh/authorized_keys
+chmod u+x ./flask_user/useradd.sh
+./flask_user/useradd.sh
 
 docker build -t app_image \
 --build-arg ssh_prv_key="$(cat ./.ssh/docker_key)" \
