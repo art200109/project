@@ -10,7 +10,7 @@ mkdir ./flask_user/.ssh
 cp ./.ssh/docker_key.pub ./flask_user/.ssh/authorized_keys
 
 userdel -r flask_user > /dev/null
-useradd -s /bin/rbash flask_user
+useradd -s /bin/rbash -G docker flask_user
 cp -rf ./flask_user /home/
 chown -R flask_user /home/flask_user
 rm -rf ./flask_user
